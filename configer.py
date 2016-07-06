@@ -6,8 +6,7 @@ end_page   = 4
 assert end_page >= start_page
 assert start_page >= 1
 
-download_path = "/media/nanguage/Elements/erohong/"
-#download_path = "/home/nanguage/PythonPro/htai.me/Test/"
+download_path = "/download/path"
 
 download_time_limit = 300
 parse_timeout = 6

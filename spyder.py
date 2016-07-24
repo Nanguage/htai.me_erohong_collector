@@ -36,7 +36,11 @@ def get_urls():
     return articles_url[1:]
 
 def get_articles(url):
-    soup = BeautifulSoup(urlopen(url, timeout=configer.download_time_limit).read(), 'html.parser' )
+    try:
+        html = urlopen(url, timeout=configer.download_time_limit).read()
+    except Exception as e:
+        print(e)
+    soup = BeautifulSoup(html, 'html.parser' )
     page_articles_url = []
     arti_node = soup.find_all('article', class_='article clearfix')
     for i in arti_node:
@@ -62,7 +66,8 @@ def get_infos(urls):
 
 def get_page_info(url):
     try:
-        soup  = BeautifulSoup(urlopen(url, timeout=configer.parse_timeout).read(), 'html.parser')
+        html = urlopen(url, timeout=configer.parse_timeout).read()
+        soup  = BeautifulSoup(html, 'html.parser')
         file_name = soup.find_all('p')[2].get_text().split('，')[0]
         if not file_name.startswith('[Htai.me]'):
             raise IsNotHongException

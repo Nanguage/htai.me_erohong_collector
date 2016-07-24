@@ -10,7 +10,7 @@ http://blog.nanguage.org/wordpress/2016/07/06/%E7%BB%85%E5%A3%AB%E6%9C%AC%E5%AD%
 pip3 install -r requirements.txt
 ```
 ### 修改配置
-所有配置均位于configer.py中，一般来说只需要修改start_page 与 end_page两个变量，对应要下载htai.me上的起始与终止页号。main_page 对应起始页面，zip_passwd 对应解压密码。
+所有配置均位于configer.py中，一般来说只需要修改start_page 与 end_page两个变量，对应要下载htai.me上的起始与终止页号。main_page 对应起始页面，zip_passwd 对应解压密码。download_path 为本地保存地址。
 ### 运行
 修改配置后运行main.py开始爬取。
 ```
